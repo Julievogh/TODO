@@ -1,0 +1,168 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    #d5cbc1,
+    rgb(171, 142, 114),
+    #d7b398,
+    #a27676
+  );
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.to_do_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo_app {
+  width: 100%;
+  max-width: 540px;
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.h2_img {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.todo_app h2 {
+  color: rgb(50, 50, 100);
+  display: flex;
+  align-items: center;
+  font-size: 2.6rem;
+}
+
+#todo_img {
+  width: 120px;
+  max-width: 100%;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ccdbcd;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: #d7b398;
+  color: rgb(101, 102, 181);
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+ul li {
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative; /* hjælper med at sætte ::before lementerne med absolute i forhold til li elementerne */
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(img/uncheck.png);
+  background-size: cover;
+  background-position: center;
+  top: 7px;
+  left: 8px;
+}
+
+ul li.checked {
+  color: brown;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background-image: url(img/check.png);
+}
+
+ul li span {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: aquamarine;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #a27676;
+}
+
+ul li span:hover {
+  background-color: rgb(180, 155, 124);
+}
+
+.deleted_background {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.deleted_tasks {
+  text-align: center;
+  width: 400px;
+}
+
+#deleted_tasks_message {
+  padding: 10px;
+}
+
+.deleted_tasks button {
+  margin-bottom: 20px;
+}
+
+.deleted_tasks ul {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.deleted_tasks li {
+  text-align: left;
+}
+
+button.delete_list {
+  margin: auto;
+  margin-top: 20px;
+}
